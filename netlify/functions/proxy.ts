@@ -17,7 +17,7 @@ const CORS_HEADERS: Record<string, string> = {
   "access-control-allow-origin": "*",
   "access-control-allow-methods": "*",
   "access-control-allow-headers": "*",
-  "access-control-expose-headers": *,
+  "access-control-expose-headers": "*",
 };
 
 export default async (request: Request, context: Context) => {
