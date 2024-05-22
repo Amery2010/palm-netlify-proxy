@@ -66,7 +66,7 @@ export default async (request: Request, context: Context) => {
   const headers = pickHeaders(request.headers, ["content-type", "x-goog-api-client", "x-goog-api-key", "accept-encoding"]);
 
   const response = await fetch(url, {
-    body: request.body,
+    body: request.body ?? null,
     method: request.method,
     duplex: 'half',
     headers,
@@ -78,7 +78,7 @@ export default async (request: Request, context: Context) => {
     "content-encoding": null
   };
 
-  return new Response(response.body, {
+  return new Response(response.body ?? null, {
     headers: responseHeaders,
     status: response.status
   });
